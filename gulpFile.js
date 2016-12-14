@@ -32,16 +32,32 @@ gulp.task('html-min',_=>gulp
 
 
 
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+gulp.task('handle_js',_=>gulp
+	.src(['./file1/1.js', './file2/2.js'])
+				.pipe(plumber())		
+				.pipe(uglify())
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./'))
+);
+
+
+
+
+
 gulp.task('default',[
-	'stylus_task',
+	// 'stylus_task',
 	// 'html-min',
+	'handle_js',
 	'watcher',
 ],function(){
 	console.log("Finished the dependances calling");
 });
 
 gulp.task('watcher',function(){
-	gulp.watch("./**/*.styl",['stylus_task']);
+	// gulp.watch("./**/*.styl",['stylus_task']);
+	gulp.watch("./**/*.js",['handle_js']);
 	return false;			
 });
 
