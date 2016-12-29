@@ -1,0 +1,17 @@
+{
+  "name": "stylus_env",
+  "description": "",
+  "main": "gulpFile.js",
+  "authors": [
+    "Ahmed Badawy <me@ahmed-badawy.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Ahmed-Badawy/Gulp-Designer-ENV",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
